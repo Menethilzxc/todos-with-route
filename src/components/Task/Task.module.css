@@ -130,6 +130,37 @@ li:hover {
 	border-left-color: transparent;
 	animation: loader 1s infinite;
 }
+
+.CurrentTask {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Task {
+	min-width: 600px;
+	max-height: 700px;
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 20px;
+	margin-bottom: 70px;
+}
+
+.TaskText {
+	font-size: 19px;
+	word-wrap: break-word;
+	text-align: center;
+}
+
+.TaskBtn {
+	width: 200px;
+}
+
+.BackBtn {
+	width: 170px;
+}
+
 @keyframes loader {
 	0% {
 		transform: rotate(0deg);

@@ -1,0 +1,13 @@
+.Error {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 100px;
+}
+
+.LinkBack {
+	font-size: 25px;
+	padding: 12px;
+	border-radius: 20px;
+	margin-left: 4px;
+}

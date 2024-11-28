@@ -1,24 +1,26 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 export const useRequestChangeTodo = (
-	setErrorParagraph,
 	todoText,
-	selectedTodoId,
 	refreshTodo,
+	setCurrentTodo,
 	setTodoText,
-	setSelectedTodoId,
+	setErrorParagraph,
 ) => {
 	const [isUpdating, setIsUpdating] = useState(false);
+	const { id } = useParams();
+
+	console.log(typeof todoText);
+
 	const requestChangeTodo = () => {
 		if (!todoText.trim()) {
 			setErrorParagraph(true);
 			return;
 		}
-		if (!selectedTodoId) {
-			setErrorParagraph(true);
-			return;
-		}
+
 		setIsUpdating(true);
-		fetch(`http://localhost:3005/todos/${selectedTodoId}`, {
+		fetch(`http://localhost:3005/todos/${id}`, {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json;charset=utf-8' },
 			body: JSON.stringify({
@@ -26,11 +28,10 @@ export const useRequestChangeTodo = (
 			}),
 		})
 			.then((rawResponse) => rawResponse.json())
-			.then(() => {
-				refreshTodo();
-				setTodoText('');
+			.then((response) => {
+				setCurrentTodo(response);
+				setTodoText(response);
 				setErrorParagraph();
-				setSelectedTodoId(null);
 			})
 			.finally(() => {
 				setIsUpdating(false);

@@ -101,25 +101,27 @@ span {
 
 ol {
 	padding: 0;
+	display: flex;
+	flex-direction: column;
 }
 
-li {
-	list-style-type: none;
-	border: 1px solid white;
-	width: 500px;
+a {
 	padding: 5px;
-	margin-bottom: 3px;
-	cursor: pointer;
-	transition: 0.2s;
+	border: 1px solid white;
+	color: white;
+	width: 500px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	margin-bottom: 5px;
+	transition: 0.2s;
 }
 
-li:hover {
-	background: white;
+a:hover {
 	color: black;
+	background: white;
 }
+
 .loader {
 	margin: 0 auto;
 	transform: translate(-50%, -50%);
@@ -130,6 +132,13 @@ li:hover {
 	border-left-color: transparent;
 	animation: loader 1s infinite;
 }
+
+.CleanList {
+	text-align: center;
+	width: 500px;
+	font-size: 21px;
+}
+
 @keyframes loader {
 	0% {
 		transform: rotate(0deg);
