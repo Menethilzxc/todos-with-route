@@ -1,8 +1,47 @@
-# React + Vite
+# Список дел с маршрутизацией (React + JSON Server)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение для управления задачами. Реализованы добавление, удаление, редактирование задач, поиск и сортировка по алфавиту. Для перехода к подробностям по задаче используется React Router. Используется `json-server` для имитации backend'а
 
-Currently, two official plugins are available:
+## Стек технологий
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- React Router DOM
+- JavaScript
+- Vite
+- JSON Server (фейковый backend)
+
+## Функциональность
+
+-  Добавление новых дел
+-  Поиск задач по ключевым словам
+-  Сортировка задач по алфавиту
+-  Клик по задаче ведёт на страницу с её описанием
+-  Возможность редактировать или удалить задачу на отдельной странице
+-  Хранение данных на `db.json` через REST API
+
+## Превью
+
+### Главная страница без задач:
+![Главная без задач](/assets/main-preview.jpg)
+
+### Главная страница с задачами:
+![Главная с задачами](/assets/main-todos-preview.jpg)
+
+### Страница с выбранной задачей:
+![Текущая задача](/assets/current-preview.jpg)
+
+## Установка и запуск
+
+### 1. Клонировать проект
+
+- git clone https://github.com/Menethilzxc/todos-with-route.git
+- cd todos-with-route
+
+### 2. Установить зависимости
+- npm install
+
+### 3. Запустить json-server
+- npx json-server --watch src/db.json --port 3005
+
+### 4. Запустить React-приложение
+- npm run dev
